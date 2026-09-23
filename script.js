@@ -1,0 +1,2 @@
+const els=document.querySelectorAll('.project,.timeline article,.credential,.three article');
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],{duration:600,easing:'cubic-bezier(.2,.7,.2,1)',fill:'both'});io.unobserve(e.target)}}),{threshold:.12});els.forEach(e=>io.observe(e));
